@@ -34,6 +34,19 @@ app.get('/api/discord-server-info', (req, res) => {
 app.get('/', (req, res) => {
   res.send('API de estadísticas de Discord funcionando 🚀');
 });
+app.get('/api/stats', (req, res) => {
+  res.json({
+    messageCount: serverStats.messageCount,
+    topMembers: serverStats.topMembers
+  });
+});
+
+app.get('/api/members', (req, res) => {
+  res.json({
+    memberCount: serverStats.memberCount,
+    onlineCount: serverStats.onlineCount
+  });
+});
 
 app.listen(port, () => {
   console.log(`Backend running on port ${port}`);
