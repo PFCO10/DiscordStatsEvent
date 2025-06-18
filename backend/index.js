@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://tu-frontend.netlify.app'  // Cambia por la URL real de tu frontend en Netlify
+  origin: 'https://discordstatsevent.netlify.app/' 
 }));
 const port = process.env.PORT || 3000;
 
