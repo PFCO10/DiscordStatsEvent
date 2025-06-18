@@ -2,10 +2,15 @@ import express from 'express';
 import dotenv from 'dotenv';
 import memberBot from './memberBot.js';
 import messageBot from './messageBot.js';
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+  origin: 'https://tu-frontend.netlify.app'  // Cambia por la URL real de tu frontend en Netlify
+}));
 const port = process.env.PORT || 3000;
 
 let serverStats = {
