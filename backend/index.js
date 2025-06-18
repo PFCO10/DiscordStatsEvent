@@ -31,6 +31,9 @@ messageBot.init((msgData) => {
 app.get('/api/discord-server-info', (req, res) => {
   res.json(serverStats);
 });
+app.get('/', (req, res) => {
+  res.send('API de estadísticas de Discord funcionando 🚀');
+});
 
 app.listen(port, () => {
   console.log(`Backend running on port ${port}`);
